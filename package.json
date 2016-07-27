@@ -1,0 +1,115 @@
+{
+  "name": "jspm-inferno",
+  "version": "0.0.1",
+  "description": "jspm inferno boilerplate",
+  "main": "jspm-inferno.js",
+  "scripts": {
+    "start": "node server",
+    "pretest": "node_modules/.bin/standard",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node_modules/.bin/jspm bundle app.js --inject --minify"
+  },
+  "dependencies": {
+    "jspm": "^0.17.0-beta.24"
+  },
+  "jspm": {
+    "name": "jspm-inferno",
+    "directories": {
+      "baseURL": "public"
+    },
+    "dependencies": {
+      "babel-plugin-inferno": "npm:babel-plugin-inferno@^0.7.7",
+      "inferno": "npm:inferno@^0.7.21",
+      "inferno-component": "npm:inferno-component@^0.7.21",
+      "inferno-create-class": "npm:inferno-create-class@^0.7.24",
+      "inferno-dom": "npm:inferno-dom@^0.7.21",
+      "inferno-router": "npm:inferno-router@^0.7.24",
+      "mobx-inferno": "npm:mobx-inferno@^0.1.1",
+      "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.6.0"
+    },
+    "devDependencies": {
+      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.12"
+    },
+    "peerDependencies": {
+      "buffer": "github:jspm/nodelibs-buffer@^0.2.0-alpha",
+      "core-js": "npm:core-js@^1.2.0",
+      "events": "github:jspm/nodelibs-events@^0.2.0-alpha",
+      "fs": "github:jspm/nodelibs-fs@^0.2.0-alpha",
+      "mobx": "npm:mobx",
+      "net": "github:jspm/nodelibs-net@^0.2.0-alpha",
+      "path": "github:jspm/nodelibs-path@^0.2.0-alpha",
+      "process": "github:jspm/nodelibs-process@^0.2.0-alpha",
+      "react": "npm:react@^0.14.7",
+      "stream": "github:jspm/nodelibs-stream@^0.2.0-alpha",
+      "tty": "github:jspm/nodelibs-tty@^0.2.0-alpha",
+      "util": "github:jspm/nodelibs-util@^0.2.0-alpha"
+    },
+    "overrides": {
+      "npm:debug@2.2.0": {
+        "main": "browser.js",
+        "jspmNodeConversion": false,
+        "format": "cjs",
+        "map": {
+          "./browser.js": {
+            "node": "./node.js"
+          },
+          "fs": "@node/fs",
+          "net": "@node/net",
+          "tty": "@node/tty",
+          "util": "@node/util"
+        }
+      },
+      "npm:fbjs@0.6.1": {
+        "dependencies": {}
+      },
+      "npm:inherits@2.0.1": {
+        "ignore": [
+          "test.js"
+        ]
+      },
+      "npm:ms@0.7.1": {
+        "jspmNodeConversion": false,
+        "format": "cjs"
+      },
+      "npm:react@0.14.8": {
+        "dependencies": {
+          "fbjs": "^0.6.1"
+        },
+        "format": "cjs",
+        "meta": {
+          "*": {
+            "globals": {
+              "process": "process"
+            }
+          }
+        },
+        "map": {
+          "fbjs/lib/ExecutionEnvironment.js": {
+            "production": "@empty"
+          },
+          "./lib/ReactDefaultPerf.js": {
+            "production": "@empty"
+          },
+          "./lib/ReactTestUtils.js": {
+            "production": "@empty"
+          }
+        }
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/capaj/jspm-inferno.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/capaj/jspm-inferno/issues"
+  },
+  "homepage": "https://github.com/capaj/jspm-inferno#readme",
+  "devDependencies": {
+    "http-server": "^0.8.5",
+    "chokidar-socket-emitter": "^0.5.0",
+    "standard": "^7.1.2"
+  }
+}
