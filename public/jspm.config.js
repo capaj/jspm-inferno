@@ -2,7 +2,8 @@ SystemJS.config({
   nodeConfig: {
     "paths": {
       "github:": "jspm_packages/github/",
-      "npm:": "jspm_packages/npm/"
+      "npm:": "jspm_packages/npm/",
+      "jspm-inferno/": "src/"
     }
   },
   devConfig: {
@@ -28,12 +29,14 @@ SystemJS.config({
           "loader": "plugin-babel"
         }
       }
+    },
+    "/": {
+      "defaultExtension": "js"
     }
   }
 });
 
 SystemJS.config({
-  defaultJSExtensions: true,
   packageConfigPaths: [
     "npm:@*/*.json",
     "npm:*.json",
